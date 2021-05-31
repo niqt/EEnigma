@@ -15,7 +15,9 @@ struct ContactsView: View {
     var body: some View {
         List {
             ForEach(contacts) { contact in
-                RowView(contact: contact)
+                NavigationLink(destination: ChattingView(), label: {
+                    RowView(contact: contact)
+                })
             }
         }
     }

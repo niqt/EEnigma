@@ -10,8 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            ContactsView()
-                .tabItem {  Label("Contacts", systemImage: "rectangle.stack.person.crop.fill")}
+            NavigationView {
+                ContactsView()
+                    .navigationBarTitle("", displayMode: .inline)
+            }
+            .tabItem {  Label("Contacts", systemImage: "rectangle.stack.person.crop.fill")}
             ChatView()
                 .tabItem {  Label("Chat", systemImage: "message.fill")}
             SettingView()

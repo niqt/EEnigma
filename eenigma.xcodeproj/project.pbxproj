@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B339677F266574CF003FB66C /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339677E266574CF003FB66C /* ChattingView.swift */; };
 		B34B0C31265C3F3C009AB267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B0C30265C3F3C009AB267 /* AppDelegate.swift */; };
 		B34B0C33265C3F3C009AB267 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B0C32265C3F3C009AB267 /* SceneDelegate.swift */; };
 		B34B0C35265C3F3C009AB267 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B0C34265C3F3C009AB267 /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B339677E266574CF003FB66C /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		B34B0C2D265C3F3C009AB267 /* eenigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eenigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34B0C30265C3F3C009AB267 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B34B0C32265C3F3C009AB267 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				B34B0C44265C4098009AB267 /* Contact.swift */,
 				B34B0C46265C4867009AB267 /* ContactsView.swift */,
 				B34B0C4C265D969E009AB267 /* Chat.swift */,
+				B339677E266574CF003FB66C /* ChattingView.swift */,
 			);
 			path = eenigma;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				B34B0C45265C4098009AB267 /* Contact.swift in Sources */,
 				B34B0C31265C3F3C009AB267 /* AppDelegate.swift in Sources */,
+				B339677F266574CF003FB66C /* ChattingView.swift in Sources */,
 				B34B0C33265C3F3C009AB267 /* SceneDelegate.swift in Sources */,
 				B34B0C4B265C48B7009AB267 /* SettingView.swift in Sources */,
 				B34B0C47265C4867009AB267 /* ContactsView.swift in Sources */,

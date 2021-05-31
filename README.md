@@ -1,3 +1,2 @@
 # EEnigma
-This project is a chat app that use the Echo protocol.
-I started this project in memory of my friend Bernd H. Stramm, passed away two years ago.
+This Chat App **EEnigma** stands for **Electronic Enigma**. It is a project based on the Echo protocol as e.g. deployed in the Smoke mobile Messenger Application for Android, which is known as as worldwide the first mobile McEliece Messenger. I started this project in memory of my friend Bernd H. Stramm, who passed away two years ago and was also a friend of the inventor of the Echo Protocol, e.g. for secure chat. The aim is to provide students a step by step guide and open source code basis to develop an own chat application with the Swift programming language.
