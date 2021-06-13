@@ -9,17 +9,39 @@ import SwiftUI
 
 struct ContactsView: View {
     var contacts: Array<Contact> = [Contact(name: "Alice", lastName: "Fish", aliasName: "Alix"),
-        Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
+                                    , Contact(name: "Bob", lastName: "Bird", aliasName: "Bobby")
     ]
+    
+    init() {
+        UITableView.appearance().backgroundColor = .none
+        UITableViewCell.appearance().backgroundColor = .none
+    }
     
     var body: some View {
         List {
             ForEach(contacts) { contact in
-                NavigationLink(destination: ChattingView(), label: {
+                ZStack(alignment: .leading) {
                     RowView(contact: contact)
-                })
-            }
-        }
+                    NavigationLink(destination: ChattingView()) {
+                        EmptyView()
+                    }.buttonStyle(PlainButtonStyle()).frame(width:0).opacity(0)
+                }
+            }.listRowBackground(Color.clear)
+        }.background(Color.black)
+        .ignoresSafeArea()
     }
 }
 
@@ -30,8 +52,11 @@ struct RowView: View {
             Image(systemName: "person")
                 .resizable()
                 .frame(width: 30, height: 30)
+                .foregroundColor(.white)
             Text(contact.aliasName)
+                .foregroundColor(.white)
         }
+        //.opacity(1)
     }
 }
 

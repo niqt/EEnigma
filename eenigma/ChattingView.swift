@@ -9,53 +9,58 @@ import SwiftUI
 
 struct ChattingView: View {
     @State var chats: Array<Chat> = [Chat(name: "Alice", image: "person", lastMessage: "Bye", timestamp: Date(), chatId: "1"),
-      Chat(name: "Bob", image: "person", lastMessage: "See soon", timestamp: Date(), chatId: "2")
+                                     Chat(name: "Bob", image: "person", lastMessage: "See soon", timestamp: Date(), chatId: "2")
     ]
     
     @State var writing: String = ""
-
+    
     init() {
-        UITableView.appearance().backgroundColor = .purple
+        UITableView.appearance().backgroundColor = .none
+        UITableViewCell.appearance().backgroundColor = .none
     }
     
     var body: some View {
-            VStack {
-                List {
-                    ForEach(chats) { chat in
-                        if chat.name == "Bob" {
-                            UserRowView(chat: chat)
-                        } else {
-                            ChatRowView(chat: chat)
-                        }
-                    }
-                    
-                }.background(Color.purple)
-                .listStyle(SidebarListStyle())
-                .navigationBarTitle("Chatting", displayMode: .inline)
-                .onTapGesture {
-                            self.endEditing()
-                        }
-                
-                HStack() {
-                    TextEditor(text: $writing)
-                        .frame(minHeight: 0, maxHeight: 50)
-                        .border(Color.gray)
+        VStack(spacing: 0) {
+            // Chat
+            List {
+                ForEach(chats) { chat in
+                    if chat.name == "Bob" {
+                        UserRowView(chat: chat)
                         
-                    Button(action: {
-                        chats.append(Chat(name: "Bob", image:"", lastMessage: writing, timestamp: Date(), chatId: ""))
-                            writing = ""
-                            hideKeyboard()
-                    }, label: {
-                        Image(systemName: "paperplane")
-                    })
-                    
-                }.ignoresSafeArea(.keyboard, edges: .bottom)
-                .padding()
-    }
+                    } else {
+                        ChatRowView(chat: chat)
+                    }
+                }.listRowBackground(Color.clear)
+            }.background(Color.black)
+            .listStyle(SidebarListStyle())
+            .ignoresSafeArea()
+            .navigationBarTitle("Chatting", displayMode: .inline)
+            .onTapGesture {
+                self.endEditing()
+                
+            }
+            // Input
+            HStack() {
+                TextEditor(text: $writing)
+                    .frame(minHeight: 0, maxHeight: 50)
+                    .border(Color.gray)
+                
+                Button(action: {
+                    chats.append(Chat(name: "Bob", image:"", lastMessage: writing, timestamp: Date(), chatId: ""))
+                    writing = ""
+                    self.endEditing()
+                }, label: {
+                    Image(systemName: "paperplane")
+                })
+                
+            }.ignoresSafeArea(.keyboard, edges: .bottom)
+            .padding()
+            .background(Color.black)
+        }
     }
     private func endEditing() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
-        }
+    }
 }
 
 
@@ -75,7 +80,7 @@ struct ChatRowView: View {
                 .padding(2)
                 .font(.caption)
                 .foregroundColor(.white)
-                
+            
         }.background(Color.blue)
         .cornerRadius(10)
     }
@@ -108,7 +113,7 @@ struct UserRowView: View {
 
 struct ChattingView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChattingView()
     }
 }
 
@@ -121,3 +126,5 @@ func timeFormat(date: Date) -> String {
 func hideKeyboard() {
     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }
+
+
