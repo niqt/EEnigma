@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SettingsView.swift
 //  eenigma
 //
 //  Created by Nicola De Filippo on 06/10/24.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    
+struct SettingsView: View {
+    let messages: [String] = ["ddd"]
+
     init () {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.red]
@@ -21,25 +22,11 @@ struct ContentView: View {
     }
     
     var body: some View {
-        TabView {
-            Tab("Contacts", systemImage: "rectangle.stack.person.crop.fill") {
-                NavigationStack {
-                    ContactsView()
-                        .navigationBarTitle("Contacts", displayMode: .inline)
-                }
-            }
-            Tab("Chat", systemImage: "message.fill") {
-                NavigationStack {
-                    ChatsView()
-                }
-            }.badge(3)
-            Tab("Settings", systemImage: "gear") {
-                SettingsView()
-            }
-        }
+        Text("Settings")
     }
 }
 
+
 #Preview {
-    ContentView()
+    SettingsView()
 }
